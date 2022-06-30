@@ -15,18 +15,18 @@ jobs:
         with:
           node-version: 14
       - name: Install dependencies
-        run: npm install --no-audit --no-fund --no-optional
+        run: npm ci
       - name: Lint
         run: npm run eslint
       - name: Build
         run: npm run build
       - name: Test
         run: npm test
-      - name: Cypress run
-        uses: cypress-io/github-action@v4
-        with:
-          command: npm run test:e2e
-          start: npm run start-test
-          wait-on: http://localhost:5000
+#      - name: Cypress run
+#        uses: cypress-io/github-action@v4
+#        with:
+#          command: npm run test:e2e
+#          start: npm run start-test
+#          wait-on: http://localhost:5000
 
 
